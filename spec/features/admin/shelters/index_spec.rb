@@ -38,4 +38,15 @@ RSpec.describe 'the admin shelter index' do
       expect(page).to_not have_content(@shelter_4.name)
     end
   end
+
+   it 'lists shelters with pending applications alphabetically' do
+     visit "/admin/shelters"
+
+     within "#shelters-with-pending-applications" do
+       expect(@shelter_2.name).to appear_before(@shelter_3.name)
+       expect(page).to_not have_content(@shelter_4.name)
+       expect(page).to_not have_content(@shelter_1.name)
+     end
+   end
+
 end
