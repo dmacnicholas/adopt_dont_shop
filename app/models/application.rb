@@ -28,4 +28,14 @@ class Application < ApplicationRecord
     pet_applications.find_by(pet_id: pet_id)&.status
   end
 
+  def application_accepted
+    write_attribute(:status, "Accepted")
+    save
+  end
+
+  def application_rejected
+    write_attribute(:status, "Rejected")
+    save
+  end
+
 end

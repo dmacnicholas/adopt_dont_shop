@@ -38,7 +38,6 @@ RSpec.describe 'user can create new application' do
       fill_in "city", with: "Nashville"
       fill_in "state", with: "TN"
       fill_in "zip", with: 37067
-      fill_in "description", with: "I love dogs."
 
       click_on("Submit")
 
@@ -47,7 +46,6 @@ RSpec.describe 'user can create new application' do
       expect(page).to have_content("Nashville")
       expect(page).to have_content("TN")
       expect(page).to have_content(37067)
-      expect(page).to have_content("I love dogs.")
       expect(page).to have_content("In Progress")
    end
 
